@@ -26,16 +26,6 @@ class TransactionController extends Controller
         return view('kasir.transactions.create', compact('tables', 'menus'));
     }
 
-    public function index()
-    {
-        $transactions = Transaction::with('table', 'payment')
-            ->where('user_id', auth()->id())
-            ->latest()
-            ->paginate(10);
-
-        return view('kasir.transactions.index', compact('transactions'));
-    }
-
     public function store(StoreTransactionRequest $request)
     {
         $transaction = $this->transactionService->createTransaction(

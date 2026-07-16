@@ -32,11 +32,8 @@
             <a href="{{ route('kasir.dashboard') }}" class="nav-link text-white {{ request()->routeIs('kasir.dashboard') ? 'active bg-primary rounded' : '' }}">
                 <i class="bi bi-speedometer2"></i> Dashboard
             </a>
-            <a href="{{ route('kasir.transactions.create') }}" class="nav-link text-white {{ request()->routeIs('kasir.transactions.create') ? 'active bg-primary rounded' : '' }}">
+            <a href="{{ route('kasir.transactions.create') }}" class="nav-link text-white {{ request()->routeIs('kasir.transactions.*') ? 'active bg-primary rounded' : '' }}">
                 <i class="bi bi-cart-plus"></i> Transaksi Baru
-            </a>
-            <a href="{{ route('kasir.transactions.index') }}" class="nav-link text-white {{ request()->routeIs('kasir.transactions.index') ? 'active bg-primary rounded' : '' }}">
-                <i class="bi bi-clock-history"></i> Riwayat Transaksi
             </a>
         @endif
     </nav>
